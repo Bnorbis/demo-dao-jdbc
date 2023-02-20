@@ -13,8 +13,8 @@ public class DB {
 
 	private static Connection conn = null;
 	
-	public static Connection getConnection() {
-		if (conn == null) {
+	public static Connection getConnection() throws SQLException {
+		if (conn == null || conn.isClosed()) {
 			try {
 				Properties props = loadProperties();
 				String url = props.getProperty("dburl");
