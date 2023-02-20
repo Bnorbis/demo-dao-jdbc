@@ -11,6 +11,8 @@ public class Program {
     public static void main(String[] args) {
         Department obj = new Department(1, "Books");
 
+        System.out.println("=== TEST 1: seller findById ===");
+
         //Injeção de dependencia
         SellerDao sellerDao = DaoFactory.createSellerDao();
         Seller seller = sellerDao.findById(3);
